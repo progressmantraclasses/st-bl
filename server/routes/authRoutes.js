@@ -316,7 +316,7 @@ router.get("/google", passport.authenticate("google", { scope: ["profile", "emai
 
 router.get("/google/callback", passport.authenticate("google", { session: false }), (req, res) => {
     if (!req.user || !req.user.token || !req.user.user) {
-        return res.redirect("http://localhost:5173/login?error=OAuthFailed");
+        return res.redirect("https://st-blogs.vercel.app/login?error=OAuthFailed");
     }
 
     res.cookie("token", req.user.token, {
@@ -326,7 +326,7 @@ router.get("/google/callback", passport.authenticate("google", { session: false 
         maxAge: 24 * 60 * 60 * 1000,
     });
 
-    res.redirect("http://localhost:5173");
+    res.redirect("https://st-blogs.vercel.app");
 });
 
 // GITHUB
@@ -334,7 +334,7 @@ router.get("/github", passport.authenticate("github", { scope: ["user:email"] })
 
 router.get("/github/callback", passport.authenticate("github", { session: false }), (req, res) => {
     if (!req.user || !req.user.token || !req.user.user) {
-        return res.redirect("http://localhost:5173/login?error=OAuthFailed");
+        return res.redirect("https://st-blogs.vercel.app/login?error=OAuthFailed");
     }
 
     res.cookie("token", req.user.token, {
@@ -344,7 +344,7 @@ router.get("/github/callback", passport.authenticate("github", { session: false 
         maxAge: 24 * 60 * 60 * 1000,
     });
 
-    res.redirect("http://localhost:5173");
+    res.redirect("https://st-blogs.vercel.app");
 });
 
 // LINKEDIN
@@ -352,7 +352,7 @@ router.get("/linkedin", passport.authenticate("linkedin"));
 
 router.get("/linkedin/callback", passport.authenticate("linkedin", { session: false }), (req, res) => {
     if (!req.user || !req.user.token || !req.user.user) {
-        return res.redirect("http://localhost:5173/login?error=OAuthFailed");
+        return res.redirect("https://st-blogs.vercel.app/login?error=OAuthFailed");
     }
 
     res.cookie("token", req.user.token, {
@@ -362,7 +362,7 @@ router.get("/linkedin/callback", passport.authenticate("linkedin", { session: fa
         maxAge: 24 * 60 * 60 * 1000,
     });
 
-    res.redirect("http://localhost:5173");
+    res.redirect("https://st-blogs.vercel.app");
 });
 
 module.exports = router;
