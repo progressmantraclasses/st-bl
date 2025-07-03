@@ -92,7 +92,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:5000/api/auth/google/callback",
+      callbackURL: "https://shivam-blogs.onrender.com/api/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
       let user = await User.findOne({ googleId: profile.id });
@@ -119,7 +119,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      callbackURL: "http://localhost:5000/api/auth/github/callback",
+      callbackURL: "https://shivam-blogs.onrender.com/api/auth/github/callback",
       scope: ["user:email"], // ✅ Ensure we request the email
     },
     async (accessToken, refreshToken, profile, done) => {
@@ -173,7 +173,7 @@ passport.use(
     {
       clientID: process.env.LINKEDIN_CLIENT_ID,
       clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
-      callbackURL: "http://localhost:5000/api/auth/linkedin/callback",
+      callbackURL: "https://shivam-blogs.onrender.com/api/auth/linkedin/callback",
       scope: ["r_liteprofile", "r_emailaddress"],
     },
     async (accessToken, refreshToken, profile, done) => {
